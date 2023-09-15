@@ -1,37 +1,41 @@
-// Online C compiler to run C program online
 #include <stdio.h>
 #define t 3
 
-int main() {
-    
-    int v[t], i, p, j;
-    
-    p = 0;
-    
-    for(i=0;i<t;i++){
-        printf("Digite o %d° valor do vetor: ", i+1);
+int main (){
+
+    int v[t], i, j, maior_primo = 0;
+
+
+    //entrada de dados
+    for (i=0;i<t;i++) {
+        printf("Digite o valor %d do vetor: ", i+1);
         scanf("%d", &v[i]);
     }
-    
-    
-    for(i=0;i<t;i++)
+
+    //inicio da brincadeira
+    for(i=0;i<t;i++){
         
-        if (v[i]==2) if (v[i]>p) p=v[i];
+        //se o "v[i]" for igual à 2, o segundo for não será executado assim sendo necessário a verificação manual para tal.
+        if(v[i] == 2) if(maior_primo < 2) maior_primo = 2;
         
-        
-        else
+        //loop no qual verifica se a posição "i" do vetor equivale a um numero primo, caso seja, o código irá averiguar se a variável "maior_primo" é menor que o mesmo para receber o valor de "v[i]" 
+        for(j=2; j<v[i]; j++){
             
-            for(j=2;j<v[i];j++)
-                
-                if ((v[i] % j) != 0) 
-                    
-                    if (v[i]>p) p=v[i];
-        
+            if(v[i] % j == 0){
+                break;
+            }
+            else{
+                if (maior_primo<v[i]) maior_primo=v[i];
+            }
+        }
+    }
     
-    
-    if (p==0) printf("Nenhum número é primo");
-    else printf("O maior numero primo eh %d.", p);
-    
+
+    //caso não haja números primos, a variável "maior_primo" permanecerá com o mesmo valor de início (0), sendo assim, concluo o programa com a saída de dados.
+    if(maior_primo == 0) printf("Não foi encontrado nenhum numero primo no vetor.");
+    else printf ("O maior numero primo do vetor eh: %d", maior_primo);
+
 
     return 0;
 }
+
