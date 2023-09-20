@@ -1,0 +1,24 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#define t 200
+#include <string.h>
+
+int main() {
+    
+    int i, tam, cont;
+    char s[t], l;
+    
+    printf("Digite uma frase com no maximo 200 caracteres: ");
+    fgets(s, t, stdin);
+    
+    printf("Digite um letra: ");
+    scanf("%c", &l);
+    
+    tam = strlen(s);
+    
+    for(i=0;i<tam;i++) if (l == s[i]) cont ++;
+    
+    printf("Porcentagem da letra %c na frase: %.2f%%", l, ((float)cont/(tam-1)) * 100);
+    
+    return 0;
+}
