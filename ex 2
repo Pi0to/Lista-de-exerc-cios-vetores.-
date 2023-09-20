@@ -1,0 +1,36 @@
+#include <stdio.h>
+#define t 6
+#define n 3
+
+int main (){
+
+
+    int i;
+    float v[t], sub[n], s, maior=0;
+    
+    //s para soma
+    //sub para a subsequência 
+
+    //entrada de dados
+    for (i=0; i < t; i++) {
+        printf("Digite o valor %d do vetor: ", i+1);
+        scanf("%f", &v[i]);
+    }
+
+    //Laço de repetição que faz a soma da subsequencia e atribui o valor dos numeros para o vetor "sub".
+    for (i=0;i<t-2;i++) {
+        s = v[i] + v[i+1] + v[i+2];
+        if (maior < s) {
+            maior = s;
+            sub[0] = v[i];
+            sub[1] = v[i+1];
+            sub[2] = v[i+2];}
+    }
+
+    //saída de dados
+    printf ("A soma maxima encontrada no vetor eh igual %f.\n", maior);
+    printf ("Os valores presentes na subsequência sao: ");
+    for(i=0;i<n;i++) {printf("%.2f\t", sub[i]);}
+
+    return 0;
+}
