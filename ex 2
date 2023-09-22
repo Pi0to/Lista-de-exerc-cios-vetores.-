@@ -6,7 +6,7 @@ int main (){
 
 
     int i;
-    float v[t], sub[n], s, maior=0;
+    float v[t], sub[n], s, maior;
     
     //s para soma
     //sub para a subsequência 
@@ -17,8 +17,10 @@ int main (){
         scanf("%f", &v[i]);
     }
 
+    maior = v[0] + v[1] + v[2];
+    
     //Laço de repetição que faz a soma da subsequencia e atribui o valor dos numeros para o vetor "sub".
-    for (i=0;i<t-2;i++) {
+    for (i=1;i<t-2;i++) {
         s = v[i] + v[i+1] + v[i+2];
         if (maior < s) {
             maior = s;
