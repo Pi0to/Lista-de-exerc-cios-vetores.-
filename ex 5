@@ -15,9 +15,11 @@ int main() {
     scanf("%c", &l);
     
     tam = strlen(s);
-    
+
+    //verifica quantas vezes a letra digitada está na palavra
     for(i=0;i<tam;i++) if (l == s[i]) cont ++;
-    
+
+    //mostra para o usuário o resultado da divisao
     printf("Porcentagem da letra %c na frase: %.2f%%", l, ((float)cont/(tam-1)) * 100);
     
     return 0;
