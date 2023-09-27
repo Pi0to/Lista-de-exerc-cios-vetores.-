@@ -8,8 +8,8 @@ int main() {
     int i, j,  c, c2;
     c = c2 = 0;
     
-    
-    for(i=0;i<t;i++){
+    //entrada de dados
+    for(i=0;i<t;i++){    
         printf("Digite o valor %d do primeiro vetor: ", i+1);
         scanf("%f", &v[i]);
     }
@@ -17,7 +17,8 @@ int main() {
         printf("Digite o valor %d do segundo vetor: ", i+1);
         scanf("%f", &v2[i]);
     }
-    
+
+    //verifica se o vetor 1 é multiplo do vetor 2 e vice-versa
     for(j=2;j<=100;j++){
         
         
@@ -30,7 +31,7 @@ int main() {
         if (c == t ) {break;}
         if (c2 == t ) {break;}
     }
-    
+    //saída de dados
     if(c == t) printf("O primeio vetor multiplicado por %d, eh igual ao segundo vetor.", j);
     else if (c2 == t) printf("O segundo vetor multiplicado por %d, eh igual ao primeiro vetor.", j);
     else printf("Os vetores não são multiplos escalares entre si.");
