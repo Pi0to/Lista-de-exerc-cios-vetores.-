@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-#define t 2
+#define t 10
 
 int main() {
     
