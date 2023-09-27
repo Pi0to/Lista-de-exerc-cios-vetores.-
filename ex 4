@@ -10,9 +10,11 @@ int main() {
     printf("Digite uma ou mais frase(s) com no maximo 200 caracteres: ");
     fgets(s, t, stdin);
     fflush(stdin);
-    
+
+    //pega o tamanho da string
     tam = strlen(s);
-    
+
+    //verifica se tem espaço, se for o caso adiciona +1 a variavel p que armazena aquantidade de palavras
     for(i=0;i<tam;i++) if(s[i] == ' ') p++;
     
     printf("A(s) frase(s) possuem %d palavras.", p);
